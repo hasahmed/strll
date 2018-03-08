@@ -11,6 +11,9 @@ typedef struct _str_node strll; //typical handle for head of strll
 typedef struct _str_node strll_entry;
 typedef struct _str_node strll_tail;
 
+#define ishead(ll) ll->prev ? 0 : 1
+//#define istail(ll) ll->next ? 0 : 1
+
 
 strll* strll_new();
 void strll_free_entry(strll_entry*);

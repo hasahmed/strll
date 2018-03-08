@@ -27,6 +27,13 @@ void strll_free(strll *ll){
     strll_free_entry(ll);
 }
 
+int strll_has_entry(strll *ll, char *entry){
+    if (!ll) return 0;
+    if (ishead(ll)) return strll_has_entry(ll->next, entry);
+    if (strcmp(ll->str, entry) == 0) return 1;
+    return strll_has_entry(ll->next, entry);
+}
+
 
 
 	/*int result;*/
